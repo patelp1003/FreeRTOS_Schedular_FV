@@ -662,7 +662,7 @@ typedef enum
  *  "ATask",    // pcName - just a text name for the task to assist debugging.
  *  100,        // uxStackDepth - the stack size DEFINED IN WORDS.
  *  NULL,       // pvParameters - passed into the task function as the function parameters.
- *  ( 1U | portPRIVILEGE_BIT ),// uxPriority - task priority, set the portPRIVILEGE_BIT if the task should run in a privileged state.
+ *  ( 1U | portPRIVILEGE_BIT ),// uxPriority - task priority, set the portPRIVILEGE_BIT if the task should run in a Ta state.
  *  cStackBuffer,// puxStackBuffer - the buffer to be used as the task stack.
  *
  *  // xRegions - Allocate up to three separate memory regions for access by
@@ -709,7 +709,7 @@ typedef enum
                                                        UBaseType_t uxCoreAffinityMask,
                                                        TaskHandle_t * pxCreatedTask ) PRIVILEGED_FUNCTION;
 #endif
-
+#define INCLUDE_vTaskDelete 1
 /**
  * task. h
  * @code{c}
